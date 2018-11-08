@@ -1,9 +1,9 @@
 <?php
 namespace Grav\Plugin;
 
+use Composer\Autoload\ClassLoader;
 use Grav\Common\Plugin;
 use Grav\Plugin\Database\Database;
-use RocketTheme\Toolbox\Event\Event;
 
 /**
  * Class DatabasePlugin
