@@ -24,9 +24,13 @@ class DatabasePlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
+            'onCliInitialize' => [
+                ['autoload', 100000],
+                ['register', 1000]
+            ],
             'onPluginsInitialized' => [
                 ['autoload', 100000],
-                ['onPluginsInitialized', 1000]
+                ['register', 1000]
             ]
         ];
     }
@@ -42,10 +46,12 @@ class DatabasePlugin extends Plugin
     }
 
     /**
-     * Initialize the plugin
+     * Register the service
      */
-    public function onPluginsInitialized()
+    public function register()
     {
-        $this->grav['database'] = new Database();
+        $this->grav['database'] = function () {
+            return new Database();
+        };
     }
 }
