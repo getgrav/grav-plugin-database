@@ -1,7 +1,7 @@
 name: Database
 version: 1.0.0
 description: Allows a unified way to access databases within Grav via PDO
-icon: plug
+icon: database
 author:
   name: Team Grav
   email: developers@getgrav.org
