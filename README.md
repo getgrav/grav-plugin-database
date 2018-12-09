@@ -1,6 +1,6 @@
 # Database Plugin
 
-The **Database** Plugin is for [Grav CMS](http://github.com/getgrav/grav). This is a simple that allows with simple interactions with **PDO** for database access.  The intention is this plugin should be used in conjunction with other plugins.  For example both **Views** and **Likes-Ratings** plugin utilize this plugin to manage SQLite database interactions.
+The **Database** Plugin is for [Grav CMS](http://github.com/getgrav/grav) version 1.6+. This is a simple that allows with simple interactions with **PDO** for database access.  The intention is this plugin should be used in conjunction with other plugins.  For example both **Views** and **Likes-Ratings** plugin utilize this plugin to manage SQLite database interactions.
 
 ## Installation
 
@@ -18,6 +18,7 @@ The simplest way to install this plugin is via the [Grav Package Manager (GPM)](
 
 Other than standard Grav requirements, this plugin does have some extra requirements.  For speed and scalability Database utilizes a flat-file database to store its tracking information.  This is handled automatically by the plugin, but you do need to ensure you have the following installed on your server:
 
+* **Grav 1.6+** or later 
 * **SQLite3** Database
 * **PHP pdo** Extension
 * **PHP pdo_sqlite** Driver
