@@ -11,6 +11,9 @@ bugs: https://github.com/getgrav/grav-plugin-database/issues
 docs: https://github.com/getgrav/grav-plugin-database/blob/develop/README.md
 license: MIT
 
+dependencies:
+  - { name: grav, version: '>=1.6.0-beta.6' }
+
 form:
   validation: strict
   fields:
