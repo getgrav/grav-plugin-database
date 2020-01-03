@@ -5,3 +5,7 @@ en:
 ru:
   PLUGIN_DATABASE:
     DATABASE: База данных
+
+cs:
+  PLUGIN_DATABASE:
+    DATABASE: Databáze
