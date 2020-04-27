@@ -1,5 +1,5 @@
 name: Database
-version: 1.0.1
+version: 1.0.2
 description: Allows a unified way to access databases within Grav via PDO
 icon: database
 author:
