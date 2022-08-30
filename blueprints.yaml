@@ -27,7 +27,3 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
-    text_var:
-      type: text
-      label: PLUGIN_DATABASE.TEXT_VARIABLE
-      help: PLUGIN_DATABASE.TEXT_VARIABLE_HELP
