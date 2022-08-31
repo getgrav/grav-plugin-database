@@ -13,16 +13,18 @@ class SQLITEDriver
     {
         $directory = $connection["directory"];
         $filename = $connection["filename"];
+        $username = "";
+        $password = "";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
-        $dsn = "sqlite:" . $directory . "/" . $filename;
+        $dsn = "sqlite:${directory}/${filename}";
         $this->pdo = Grav::instance()["database"]->connect(
             $dsn,
-            "",
-            "",
+            $username,
+            $password,
             $options
         );
     }

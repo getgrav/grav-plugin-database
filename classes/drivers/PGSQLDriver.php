@@ -5,24 +5,33 @@ namespace Grav\Plugin\Database\Drivers;
 use Grav\Common\Grav;
 use Grav\Plugin\Database\PDO;
 
-class SQLSRVDriver
+class PGSQLDriver
 {
     protected $pdo;
 
     public function __construct($connection)
     {
-        $server = $connection["server"];
+        $host = $connection["host"];
         $port = $connection["port"];
-        $database = $connection["database"];
-        $encrypt = $connection["encrypt"] ? "true" : "false";
-        $username = $connection["username"];
+        $dbname = $connection["dbname"];
+        $username = $connection["user"];
         $password = $connection["password"];
+        $sslmode = \in_array($connection["sslmode"], [
+            "disable",
+            "allow",
+            "prefer",
+            "require",
+            "verify-ca",
+            "verify-full",
+        ])
+            ? $connection["sslmode"]
+            : "prefer";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
-        $dsn = "sqlsrv:Server=${server},${port};Database=${database};Encrypt=${encrypt}";
+        $dsn = "pgsql:host=${host};port=${port};dbname=${dbname};user=${username};password=${password};sslmode=${sslmode}";
         $this->pdo = Grav::instance()["database"]->connect(
             $dsn,
             $username,

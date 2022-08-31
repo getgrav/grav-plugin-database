@@ -3,7 +3,6 @@
 namespace Grav\Plugin\Database\Drivers;
 
 use Grav\Common\Grav;
-use Grav\Plugin\Database;
 use Grav\Plugin\Database\PDO;
 
 class MYSQLDriver
@@ -23,15 +22,7 @@ class MYSQLDriver
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
-        $dsn =
-            "mysql:host=" .
-            $host .
-            ";port=" .
-            $port .
-            ";dbname=" .
-            $dbname .
-            ";charset=" .
-            $charset;
+        $dsn = "mysql:host=${host};port=${port};dbname=${dbname};charset=${charset}";
         $this->pdo = Grav::instance()["database"]->connect(
             $dsn,
             $username,

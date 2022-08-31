@@ -3,6 +3,7 @@
 namespace Grav\Plugin\Database;
 
 use Grav\Plugin\Database\Drivers\MYSQLDriver;
+use Grav\Plugin\Database\Drivers\PGSQLDriver;
 use Grav\Plugin\Database\Drivers\SQLITEDriver;
 use Grav\Plugin\Database\Drivers\SQLSRVDriver;
 
@@ -17,7 +18,7 @@ class Connection
 
     public function __call($method, $args)
     {
-        if (!\in_array($method, ["mysql", "sqlite", "sqlsrv"])) {
+        if (!\in_array($method, ["mysql", "pgsql", "sqlite", "sqlsrv"])) {
             throw new \RuntimeException(
                 $method . " is not a valid connection type."
             );
@@ -47,6 +48,9 @@ class Connection
         }
         if ($method === "mysql") {
             return new MYSQLDriver($connection);
+        }
+        if ($method === "pgsql") {
+            return new PGSQLDriver($connection);
         }
         if ($method === "sqlite") {
             return new SQLITEDriver($connection);
