@@ -83,6 +83,62 @@ form:
                   validate:
                     required: true
 
+        pgsql:
+          type: fieldset
+          title: PLUGIN_DATABASE.DRIVER_PGSQL
+          collapsed: true
+          collapsible: true
+          fields:
+            connections.pgsql:
+              type: list
+              fields:
+                .name:
+                  type: text
+                  label: PLUGIN_DATABASE.CONNECTION_NAME
+                  validate:
+                    required: true
+                .host:
+                  type: text
+                  label: PLUGIN_DATABASE.SERVER_HOST_IP
+                  validate:
+                    required: true
+                .port:
+                  type: text
+                  label: PLUGIN_DATABASE.PORT
+                  validate:
+                    required: true
+                    type: int
+                    min: 0
+                    max: 65536
+                  default: 3306
+                .dbname:
+                  type: text
+                  label: PLUGIN_DATABASE.DATABASE
+                  validate:
+                    required: true
+                .sslmode:
+                  type: select
+                  label: PLUGIN_DATABASE.PGSQL_SSLMODE
+                  validate:
+                    required: true
+                  options:
+                    - "prefer"
+                    - "disable"
+                    - "allow"
+                    - "require"
+                    - "verify-ca"
+                    - "verify-full"
+                .user:
+                  type: text
+                  label: PLUGIN_DATABASE.USERNAME
+                  validate:
+                    required: true
+                .password:
+                  type: text
+                  label: PLUGIN_DATABASE.PASSWORD
+                  validate:
+                    required: true
+
         sqlite:
           type: fieldset
           title: PLUGIN_DATABASE.DRIVER_SQLITE
