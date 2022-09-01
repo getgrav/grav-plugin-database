@@ -6,6 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Grav\\Plugin\\Database\\Drivers\\' => array($baseDir . '/classes/drivers'),
     'Grav\\Plugin\\Database\\' => array($baseDir . '/classes'),
 );

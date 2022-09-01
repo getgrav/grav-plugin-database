@@ -9,16 +9,11 @@ class ComposerStaticInitf9be9936aae9e8f353ee7074d1eb9ad4
     public static $prefixLengthsPsr4 = array (
         'G' => 
         array (
-            'Grav\\Plugin\\Database\\Drivers\\' => 29,
             'Grav\\Plugin\\Database\\' => 21,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Grav\\Plugin\\Database\\Drivers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/classes/drivers',
-        ),
         'Grav\\Plugin\\Database\\' => 
         array (
             0 => __DIR__ . '/../..' . '/classes',

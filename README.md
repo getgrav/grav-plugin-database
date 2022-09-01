@@ -71,9 +71,9 @@ The plugin will intialize a `Database` class in the Grav container, and you can 
             Folder::create($db_path);
         }
 
-        $connect_string = 'sqlite:' . $db_path . '/' . $this->db_name;
+        $dsn = 'sqlite:' . $db_path . '/' . $this->db_name;
 
-        $this->db = Grav::instance()['database']->connect($connect_string);
+        $this->db = Grav::instance()['database']->connect($dsn);
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         if (!$this->db->tableExists($this->table_total_views)) {
@@ -82,7 +82,7 @@ The plugin will intialize a `Database` class in the Grav container, and you can 
     }
 ```
 
-Here you can see a connection string to a `sqlite` database in the `user/data/views` folder will be used.  Then you simply `Grav::instance()['database']->connect($connect_string)` to initialize and connect to the database. If the tables do not exists, we use a local `createTables()` function to create them:
+Here you can see a connection string to a `sqlite` database in the `user/data/views` folder will be used.  Then you simply `Grav::instance()['database']->connect($dsn)` to initialize and connect to the database. If the tables do not exists, we use a local `createTables()` function to create them:
 
 ```php
     public function createTables()

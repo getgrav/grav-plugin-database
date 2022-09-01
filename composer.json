@@ -1,8 +1,7 @@
 {
   "autoload": {
     "psr-4": {
-      "Grav\\Plugin\\Database\\": "classes/",
-      "Grav\\Plugin\\Database\\Drivers\\": "classes/drivers/"
+      "Grav\\Plugin\\Database\\": "classes/"
     }
   },
   "require": {
