@@ -1,6 +1,6 @@
 # Database Plugin
 
-The **Database** Plugin is for [Grav CMS](http://github.com/getgrav/grav) version 1.6+. This is a simple that allows with simple interactions with **[PHP Data Objects](https://www.php.net/manual/en/book.pdo.php)** for database access.  The intention is this plugin should be used in conjunction with other plugins.  For example both **Views** and **Likes-Ratings** plugin utilize this plugin to manage SQLite database interactions.
+The **Database** Plugin is for [Grav CMS](http://github.com/getgrav/grav) version 1.6+. This plugin facilitates interactions with **[PHP Data Objects](https://www.php.net/manual/en/book.pdo.php)** for database access.  The intention is this plugin should be used in conjunction with other plugins.  For example both **Views** and **Likes-Ratings** plugin utilize this plugin to manage SQLite database interactions.
 
 ## Installation
 
