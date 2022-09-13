@@ -110,7 +110,7 @@ form:
                     type: int
                     min: 0
                     max: 65536
-                  default: 3306
+                  default: 5432
                 .dbname:
                   type: text
                   label: PLUGIN_DATABASE.DATABASE
