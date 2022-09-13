@@ -27,7 +27,186 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
-    text_var:
-      type: text
-      label: PLUGIN_DATABASE.TEXT_VARIABLE
-      help: PLUGIN_DATABASE.TEXT_VARIABLE_HELP
+
+    connections:
+      type: section
+      title: PLUGIN_DATABASE.CONNECTIONS
+      underline: true
+      fields:
+
+        mysql:
+          type: fieldset
+          title: PLUGIN_DATABASE.DRIVER_MYSQL
+          collapsed: true
+          collapsible: true
+          fields:
+            connections.mysql:
+              type: list
+              fields:
+                .name:
+                  type: text
+                  label: PLUGIN_DATABASE.CONNECTION_NAME
+                  validate:
+                    required: true
+                .host:
+                  type: text
+                  label: PLUGIN_DATABASE.SERVER_HOST_IP
+                  validate:
+                    required: true
+                .port:
+                  type: text
+                  label: PLUGIN_DATABASE.PORT
+                  validate:
+                    required: true
+                    type: int
+                    min: 0
+                    max: 65536
+                  default: 3306
+                .dbname:
+                  type: text
+                  label: PLUGIN_DATABASE.DATABASE
+                  validate:
+                    required: true
+                .charset:
+                  type: text
+                  label: PLUGIN_DATABASE.MYSQL_CHARSET
+                  validate:
+                    required: true
+                .username:
+                  type: text
+                  label: PLUGIN_DATABASE.USERNAME
+                  validate:
+                    required: true
+                .password:
+                  type: text
+                  label: PLUGIN_DATABASE.PASSWORD
+                  validate:
+                    required: true
+
+        pgsql:
+          type: fieldset
+          title: PLUGIN_DATABASE.DRIVER_PGSQL
+          collapsed: true
+          collapsible: true
+          fields:
+            connections.pgsql:
+              type: list
+              fields:
+                .name:
+                  type: text
+                  label: PLUGIN_DATABASE.CONNECTION_NAME
+                  validate:
+                    required: true
+                .host:
+                  type: text
+                  label: PLUGIN_DATABASE.SERVER_HOST_IP
+                  validate:
+                    required: true
+                .port:
+                  type: text
+                  label: PLUGIN_DATABASE.PORT
+                  validate:
+                    required: true
+                    type: int
+                    min: 0
+                    max: 65536
+                  default: 5432
+                .dbname:
+                  type: text
+                  label: PLUGIN_DATABASE.DATABASE
+                  validate:
+                    required: true
+                .sslmode:
+                  type: select
+                  label: PLUGIN_DATABASE.PGSQL_SSLMODE
+                  validate:
+                    required: true
+                  options:
+                    - "prefer"
+                    - "disable"
+                    - "allow"
+                    - "require"
+                    - "verify-ca"
+                    - "verify-full"
+                .user:
+                  type: text
+                  label: PLUGIN_DATABASE.USERNAME
+                  validate:
+                    required: true
+                .password:
+                  type: text
+                  label: PLUGIN_DATABASE.PASSWORD
+                  validate:
+                    required: true
+
+        sqlite:
+          type: fieldset
+          title: PLUGIN_DATABASE.DRIVER_SQLITE
+          collapsed: true
+          collapsible: true
+          fields:
+            connections.sqlite:
+              type: list
+              fields:
+                .name:
+                  type: text
+                  label: PLUGIN_DATABASE.CONNECTION_NAME
+                  validate:
+                    required: true
+                .directory:
+                  type: text
+                  label: PLUGIN_DATABASE.SQLITE_DIRECTORY
+                  validate:
+                    required: true
+                .filename:
+                  type: text
+                  label: PLUGIN_DATABASE.SQLITE_FILENAME
+                  validate:
+                    required: true
+
+        sqlsrv:
+          type: fieldset
+          title: PLUGIN_DATABASE.DRIVER_SQLSRV
+          collapsed: true
+          collapsible: true
+          fields:
+            connections.sqlsrv:
+              type: list
+              fields:
+                .name:
+                  type: text
+                  label: PLUGIN_DATABASE.CONNECTION_NAME
+                  validate:
+                    required: true
+                .server:
+                  type: text
+                  label: PLUGIN_DATABASE.SERVER_HOST_IP
+                  validate:
+                    required: true
+                .port:
+                  type: text
+                  label: PLUGIN_DATABASE.PORT
+                  validate:
+                    required: true
+                    type: int
+                    min: 0
+                    max: 65536
+                  default: 1433
+                .database:
+                  type: checkbox
+                  label: PLUGIN_DATABASE.DATABASE
+                .encrypt:
+                  type: text
+                  label: PLUGIN_DATABASE.SQLSRV_ENCRYPT
+                  validate:
+                    required: true
+                .username:
+                  type: text
+                  label: PLUGIN_DATABASE.USERNAME
+                  validate:
+                    required: true
+                .password:
+                  type: text
+                  label: PLUGIN_DATABASE.PASSWORD
+                  validate:
+                    required: true
