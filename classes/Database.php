@@ -60,16 +60,16 @@ class Database
                 $dsn .= ';password=' . $connection['password'];
                 $dsn .=
                     ';sslmode=' .
-                    \in_array($connection['sslmode'], [
+                    (\in_array($connection['sslmode'] ?? null, [
                         'disable',
                         'allow',
                         'prefer',
                         'require',
                         'verify-ca',
                         'verify-full',
-                    ])
+                    ], true)
                         ? $connection['sslmode']
-                        : 'prefer';
+                        : 'prefer');
                 $username = $connection['user'];
                 $password = $connection['password'];
                 break;
@@ -84,7 +84,7 @@ class Database
                 $dsn .= 'Server=' . $connection['server'];
                 $dsn .= ',' . $connection['port'];
                 $dsn .= ';Database=' . $connection['database'];
-                $dsn .= ';Encrypt=' . $connection['encrypt'] ? 'true' : 'false';
+                $dsn .= ';Encrypt=' . (!empty($connection['encrypt']) ? 'true' : 'false');
                 $username = $connection['username'];
                 $password = $connection['password'];
                 break;
