@@ -1,4 +1,11 @@
-# v1.1.0
+# v1.1.2
+## 06/09/2026
+
+1. [](#bugfix)
+    * Fixed broken PostgreSQL connections caused by the SSL mode never being applied to the connection settings correctly.
+    * Fixed SQL Server connections always requesting encryption regardless of the configured setting.
+
+# v1.1.1
 ## 04/23/2026
 
 1. [](#new)
