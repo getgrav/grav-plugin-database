@@ -1,5 +1,5 @@
 name: Database
-version: 1.1.2
+version: 1.2.0
 description: Allows a unified way to access databases within Grav via PDO
 icon: database
 author:
@@ -11,7 +11,7 @@ bugs: https://github.com/getgrav/grav-plugin-database/issues
 docs: https://github.com/getgrav/grav-plugin-database/blob/develop/README.md
 license: MIT
 compatibility:
-  grav: ['1.7', '2.0']
+  grav: ["1.7", "2.0"]
 
 dependencies:
   - { name: grav, version: ">=1.6.0" }
@@ -35,6 +35,12 @@ form:
       title: PLUGIN_DATABASE.CONNECTIONS
       underline: true
       fields:
+        available_driver:
+          type: select
+          label: PLUGIN_DATABASE.AVAILABLE_DRIVERS
+          description: PLUGIN_DATABASE.AVAILABLE_DRIVERS_DESC
+          size: medium
+          data-options@: '\Grav\Plugin\Database\Database::driverOptions'
 
         mysql:
           type: fieldset

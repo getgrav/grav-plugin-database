@@ -1,3 +1,12 @@
+# v1.2.0
+## 06/18/2026
+
+1. [](#new)
+    * Added an `onDatabaseDrivers` event so third-party plugins can register their own connection types via `$grav['database']->registerDriver()` (see the `database-yetisql` plugin for an example)
+2. [](#security)
+    * Fixed a potential SQL injection in `tableExists()` by replacing inline table-name interpolation with a parameterized, driver-aware catalog lookup ([GHSA-8jxg-4pw9-xcwf](https://github.com/getgrav/grav/security/advisories/GHSA-8jxg-4pw9-xcwf))
+    * Hardened DSN construction against attribute injection from connection settings: reject `;`/line-breaks/null bytes in host/dbname/charset/server/database, cast the port to an integer, and stop embedding PostgreSQL credentials in the DSN ([GHSA-jm58-p4pv-qcwc](https://github.com/getgrav/grav/security/advisories/GHSA-jm58-p4pv-qcwc))
+
 # v1.1.2
 ## 06/09/2026
 
