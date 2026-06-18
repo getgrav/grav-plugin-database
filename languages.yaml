@@ -1,5 +1,7 @@
 en:
   PLUGIN_DATABASE:
+    AVAILABLE_DRIVERS: Available Drivers
+    AVAILABLE_DRIVERS_DESC: "Database engines available on this site. Install an add-on plugin (e.g. Database YetiSQL) to add more."
     CONNECTION_NAME: Connection Name
     CONNECTIONS: Connections
     DATABASE: Database

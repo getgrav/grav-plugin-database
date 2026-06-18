@@ -1,5 +1,5 @@
 name: Database
-version: 1.1.2
+version: 1.1.3
 description: Allows a unified way to access databases within Grav via PDO
 icon: database
 author:
@@ -35,6 +35,13 @@ form:
       title: PLUGIN_DATABASE.CONNECTIONS
       underline: true
       fields:
+
+        available_driver:
+          type: select
+          label: PLUGIN_DATABASE.AVAILABLE_DRIVERS
+          description: PLUGIN_DATABASE.AVAILABLE_DRIVERS_DESC
+          size: medium
+          data-options@: '\Grav\Plugin\Database\Database::driverOptions'
 
         mysql:
           type: fieldset

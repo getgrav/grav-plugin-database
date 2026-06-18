@@ -46,12 +46,19 @@ class DatabasePlugin extends Plugin
     }
 
     /**
-     * Register the service
+     * Register the service and let third-party plugins register their own
+     * database drivers.
      */
     public function register()
     {
         $this->grav['database'] = function () {
             return new Database();
         };
+
+        // Mirrors the shortcode-core `onShortcodeHandlers` model: third-party
+        // database engines subscribe to `onDatabaseDrivers` and call
+        // $grav['database']->registerDriver(...). This only ever fires when the
+        // database plugin is loaded and enabled.
+        $this->grav->fireEvent('onDatabaseDrivers');
     }
 }
